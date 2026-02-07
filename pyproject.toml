@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hinlangpy"
+version = "1.0.0"
+description = "A pure-Python Hinglish ↔ Hindi (Devanagari) transliterator"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.7"
+authors = [
+    {name = "Ranjan"}
+]
+keywords = ["hindi", "hinglish", "devanagari", "transliteration", "roman", "unicode", "india"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Linguistic",
+    "Natural Language :: Hindi",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "flake8",
+    "black",
+]
+
+[project.scripts]
+hinlangpy = "hinlang.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ranjanlive/hinlang"
+Repository = "https://github.com/ranjanlive/hinlang"
+Issues = "https://github.com/ranjanlive/hinlang/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
